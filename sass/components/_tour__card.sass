@@ -1,0 +1,28 @@
+.tour__card
+    width: 25.44%
+    min-height: 520px
+    perspective: 150rem
+    -moz-perspective: 150rem
+    position: relative
+    &-side
+        height: 100%
+        width: 100%
+        transition: all 1s ease-in-out
+        position: absolute
+        top: 0
+        left: 0
+        backface-visibility: hidden
+        &-front
+            background: $color-white
+            box-shadow: $box-shadow
+
+        &-back
+            background: linear-gradient(157deg, $color-brown-light 3.65%, $color-brown-dark 100%)
+            box-shadow: 0px 15px 40px 0px rgba(0, 0, 0, 0.15), 0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25)
+            transform: rotateY(180deg)
+
+    &:hover &-side-front
+        transform: rotateY(-180deg)
+
+    &:hover &-side-back
+        transform: rotateY(0)

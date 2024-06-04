@@ -1,0 +1,98 @@
+.feedback__container
+    padding-top: 80px
+    padding-bottom: 80px
+    position: relative
+    // background: linear-gradient(91deg, rgba(186, 133, 84, 0.7) 16.34%, rgba(0, 0, 0, 0.7) 98.8%), url(../images/about-bcg.jpg)
+    // background-position: center
+    // background-repeat: no-repeat
+    // background-size: cover
+
+    .feedback__gradient
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        background: linear-gradient(91deg, rgba(186, 133, 84, 0.7) 16.34%, rgba(0, 0, 0, 0.7) 98.8%)
+        z-index: 1
+
+.feedback__title
+    @include section-title
+    margin-bottom: 85px
+    color: $color-white
+    position: relative
+    z-index: 2
+
+.feedback__inner
+    display: flex
+    flex-direction: column
+    align-items: center
+    gap: 8rem
+    position: relative
+    z-index: 2
+
+.feedback__wrap
+    padding-top: 5rem
+    padding-bottom: 5rem
+    display: flex
+    flex-direction: row
+    justify-content: center
+    width: 78.96%
+    // gap: 5rem
+    background: rgba(255, 255, 255, 0.80)
+    clip-path: polygon(12% 0, 100% 0, 88% 100%, 0 100%)
+
+    &-picture
+        max-width: 15rem
+        min-height: 15rem
+        border-radius: 100px
+        shape-outside: circle(50% at 50% 50%) //Свойство обтикания текста
+        -webkit-shape-outside: circle(50% at 50% 50%) //свойство чтобы работало во всех сайтах
+        overflow: hidden
+        position: relative
+
+    &-img
+        transform: scale(1.2)
+        transition: all .5s 
+
+        &:hover
+            transform: scale(1)
+
+    &-name
+        font-size: 24px
+        font-weight: 400
+        line-height: normal
+        letter-spacing: 2px
+        text-align: center
+        color: $color-white
+        position: absolute
+        width: 100%
+        height: 100%
+        top: 20%
+        left: 50%
+        transform: translate(-50%, 20%)
+        opacity: 0
+        transition: all .5s
+
+        &:hover
+            transform: translate(-50%, 10%)
+            opacity: 1
+
+        // &:hover &-img
+            // transform: scale(1)
+
+    &-content
+        width: 52%
+    &-subtitle
+        margin-bottom: 1rem
+        font-size: 20px
+        font-weight: 700
+        line-height: normal
+        letter-spacing: 2px
+        color: $color-gray
+    &-descr
+        font-size: 16px
+        font-weight: 400
+        line-height: normal
+        letter-spacing: 2px
+        color: $color-gray

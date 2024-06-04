@@ -1,0 +1,45 @@
+.about
+    background-color: #F7F7F7
+
+.about__container
+    padding-top: 21.5rem
+    padding-bottom: 21.5rem
+    background: linear-gradient(91deg, rgba(186, 133, 84, 0.70) 16.34%, rgba(0, 0, 0, 0.70) 98.8%), url("../images/about-bcg.jpg")
+    background-position: center
+    background-repeat: no-repeat
+    background-size: cover
+    clip-path: polygon(0 1%, 100% 15%, 100% 99%, 0 85%)
+
+.about__list
+    display: flex
+    flex-direction: row
+    gap: 6rem
+
+    &-icon
+        margin-bottom: 2.4rem
+        font-size: 6rem
+        background: linear-gradient(90deg, rgba(186, 133, 84, 0.7) 0.03%, rgba($color-brown-dark, 0.7) 99.94%)
+        -webkit-background-clip: text
+        color: transparent
+
+    &-item
+        padding: 2.5rem
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        border-radius: .6rem
+        background-color: #F7F7F7
+        box-shadow: $box-shadow
+        transition: transform 0.3s 
+
+.about__list-item:hover
+        transform: translateY(-1.5rem)
+
+.about__subtitle
+    @include section-subtitle
+    margin-bottom: 1rem
+
+.about__descr
+    @include section-descr
+    text-align: center

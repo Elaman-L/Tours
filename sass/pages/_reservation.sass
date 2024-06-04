@@ -1,0 +1,123 @@
+.reservation__container
+    padding: 10rem
+    background: linear-gradient(90deg, $color-brown-light, $color-brown-dark)
+
+.reservation__inner
+    height: 50rem
+    background: linear-gradient(115deg, rgba(255,255,255,0.70) 0%, rgba(255,255,255,0.70) 57%, rgba(186,133,84,0.70) 57%, rgba(161,79,3,0.70) 100%), url("../images/form.jpg")
+    background-position: center
+    background-repeat: no-repeat
+    background-size: inherit
+    box-shadow: $box-shadow
+    border-radius: .5rem
+    overflow: hidden
+
+.form
+    padding-top: 5rem
+    padding-left: 5rem
+    padding-bottom: 4rem
+
+.reservation__title
+    margin-bottom: 3rem
+    font-size: 36px
+    font-weight: 800
+    line-height: normal
+    letter-spacing: 10px
+
+.form__group
+    margin-bottom: 3rem
+
+.form__input
+    width: 30%
+    padding: 18px 22px
+    font-size: 16px
+    font-weight: 400
+    line-height: normal
+    letter-spacing: 2px
+    border: none
+    border-radius: .5rem
+    color: $color-black
+    background-color: $color-white
+    transition: all .4s
+
+    &:focus
+        outline: none
+        border-bottom: .3rem solid #66D763
+        box-shadow: $box-shadow
+
+    &:focus:invalid
+        border-bottom: .3rem solid #D76363
+
+.form__label
+    display: block
+    margin-top: 1rem
+    margin-left: 1.5rem
+    font-size: 16px
+    font-weight: 400
+    line-height: normal
+    letter-spacing: 2px
+    color: $color-gray
+    transition: .4s all
+
+.form__input:placeholder-shown + .form__label
+    opacity: 0
+    visibility: none
+
+.form__radiobtn
+    margin-bottom: 3rem
+
+.form__radio
+    width: 23%
+    display: inline-flex
+    align-items: end
+
+.form__input-radio
+    display: none
+
+.form__label-radio
+    cursor: pointer
+    position: relative
+    padding-left: 4rem
+    font-size: 16px
+    font-weight: 400
+    line-height: normal
+    letter-spacing: 2px
+    color: $color-gray
+
+.form__btn-radio
+    width: 3rem
+    height: 3rem
+    border-radius: 50%
+    border: .5rem solid $color-brown-dark
+    display: block
+    position: absolute
+    top: -.4rem
+    left: 0
+
+    &::after
+        content: ""
+        position: absolute
+        top: 50%
+        left: 50%
+        display: block
+        width: 1.5rem
+        height: 1.5rem
+        border-radius: 50%
+        background-color: $color-brown-dark
+        transform: translate(-50%, -50%)
+        opacity: 0
+        transition: all .3s
+
+.form__input-radio:checked ~ .form__label-radio .form__btn-radio::after
+    opacity: 1
+
+.form__button
+    @include btn-reset
+    color: $color-white
+    background-color: $color-brown-dark
+    text-transform: uppercase
+    transition: all .5s 
+
+    &:hover
+    &::after
+        color: $color-brown-dark

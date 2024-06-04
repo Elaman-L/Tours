@@ -1,0 +1,69 @@
+// Section hero
+
+.hero
+    background-color: #f7f7f7
+
+.hero__container
+    padding-top: 8rem
+    padding-bottom: 5rem
+
+.hero__title
+    margin-bottom: 8rem
+    @include section-title
+
+.hero__inner
+    display: flex
+    flex-direction: row
+    gap: 6.8rem
+    margin-bottom: 45px
+
+    .hero__content
+        max-width: 48%
+        &-top
+            margin-bottom: 4.5rem
+
+    .hero__subtitle
+        margin-bottom: 1rem
+        @include section-subtitle
+
+    .hero__descr
+        @include section-descr
+
+.hero__link
+    display: inline-block
+    padding: 1rem
+    border-bottom: 1px solid $color-brown-light
+    font-size: 16px
+    font-style: normal
+    font-weight: 700
+    line-height: normal
+    letter-spacing: 2px
+    color: $color-brown-light
+
+.hero__gallery
+
+    &-photo
+        width: 40%
+        box-shadow: $box-shadow
+        border-radius: .5rem
+        position: relative
+        z-index: 10
+        transition: all .3s ease-in-out
+        outline-offset: 1rem
+        &-1
+            top: 0
+            left: 3rem
+        &-2
+            top: 7rem
+            right: 4.7rem
+        &-3
+            top: -4rem
+            left: 10rem
+
+        &:hover
+            outline: 1rem solid $color-brown-light
+            transform: scale(1.1)
+            z-index: 20
+
+    &:hover &-photo:not(:hover) //При наведений уменшает картинк сзади
+        transform: scale(.95)

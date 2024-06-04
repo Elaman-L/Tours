@@ -1,0 +1,969 @@
+@charset "UTF-8";
+@keyframes leftToRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+  80% {
+    transform: translateX(1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0rem);
+  }
+}
+
+@keyframes rightToLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+  80% {
+    transform: translateX(-2rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0rem);
+  }
+}
+
+@keyframes BtnToUp {
+  0% {
+    opacity: 0;
+    transform: translateY(5rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0rem);
+  }
+}
+
+/* line 1, ../../Users/Aspire 3/Music/Портфолио/туры/sass/base/_base.sass */
+html {
+  box-sizing: border-box;
+}
+
+/* line 4, ../../Users/Aspire 3/Music/Портфолио/туры/sass/base/_base.sass */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 11, ../../Users/Aspire 3/Music/Портфолио/туры/sass/base/_base.sass */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* line 15, ../../Users/Aspire 3/Music/Портфолио/туры/sass/base/_base.sass */
+img {
+  max-width: 100%;
+}
+
+/* line 18, ../../Users/Aspire 3/Music/Портфолио/туры/sass/base/_base.sass */
+html {
+  font-size: 62.5%;
+}
+
+/* line 21, ../../Users/Aspire 3/Music/Портфолио/туры/sass/base/_base.sass */
+body {
+  min-width: 320px;
+  max-width: 3840px;
+  padding: 5rem;
+  background-color: #f7f7f7;
+  overflow-x: hidden;
+  font-family: 'roboto', sans-serif;
+}
+
+/* line 29, ../../Users/Aspire 3/Music/Портфолио/туры/sass/base/_base.sass */
+.container {
+  max-width: 1340px;
+  min-height: 95vh;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 5rem;
+}
+
+/* line 36, ../../Users/Aspire 3/Music/Портфолио/туры/sass/base/_base.sass */
+ul {
+  list-style: none;
+}
+
+/* line 1, ../../Users/Aspire 3/Music/Портфолио/туры/sass/components/_button.sass */
+.btn {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+  padding: 1.5rem 4rem;
+  border-radius: 5rem;
+  display: inline-block;
+  color: #777;
+  background-color: #fff;
+  transition: all 0.3s;
+  position: relative;
+}
+
+/* line 10, ../../Users/Aspire 3/Music/Портфолио/туры/sass/components/_button.sass */
+.btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* line 13, ../../Users/Aspire 3/Music/Портфолио/туры/sass/components/_button.sass */
+.btn:hover::after {
+  opacity: 0;
+  transform: scaleX(1.6) scaleY(1.5);
+}
+
+/* line 17, ../../Users/Aspire 3/Music/Портфолио/туры/sass/components/_button.sass */
+.btn:active {
+  transform: translateY(-2px);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* line 21, ../../Users/Aspire 3/Music/Портфолио/туры/sass/components/_button.sass */
+.btn::after {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 5rem;
+  background: white;
+  z-index: -1;
+  transition: all 0.3s;
+}
+
+/* line 34, ../../Users/Aspire 3/Music/Портфолио/туры/sass/components/_button.sass */
+.btn-animated {
+  animation-name: BtnToUp;
+  animation-duration: 0.7s;
+  animation-delay: 0.3s;
+  animation-timing-function: ease-out;
+  backface-visibility: hidden;
+  animation-fill-mode: backwards;
+}
+
+/* line 1, ../../Users/Aspire 3/Music/Портфолио/туры/sass/components/_hero__link-animated.sass */
+.hero__link-animated {
+  transition: all .4s ease-in-out;
+  position: relative;
+  text-transform: uppercase;
+}
+
+/* line 6, ../../Users/Aspire 3/Music/Портфолио/туры/sass/components/_hero__link-animated.sass */
+.hero__link-animated:hover {
+  background-color: #ba8554;
+  color: #fff;
+  transform: translateY(-0.2rem);
+}
+
+/* line 11, ../../Users/Aspire 3/Music/Портфолио/туры/sass/components/_hero__link-animated.sass */
+.hero__link-animated:active {
+  transform: translateY(0rem);
+}
+
+/* line 1, ../../Users/Aspire 3/Music/Портфолио/туры/sass/components/_tour__card.sass */
+.tour__card {
+  width: 25.44%;
+  min-height: 520px;
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  position: relative;
+}
+
+/* line 7, ../../Users/Aspire 3/Music/Портфолио/туры/sass/components/_tour__card.sass */
+.tour__card-side {
+  height: 100%;
+  width: 100%;
+  transition: all 1s ease-in-out;
+  position: absolute;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+}
+
+/* line 15, ../../Users/Aspire 3/Music/Портфолио/туры/sass/components/_tour__card.sass */
+.tour__card-side-front {
+  background: #fff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* line 19, ../../Users/Aspire 3/Music/Портфолио/туры/sass/components/_tour__card.sass */
+.tour__card-side-back {
+  background: linear-gradient(157deg, #ba8554 3.65%, #a14f03 100%);
+  box-shadow: 0px 15px 40px 0px rgba(0, 0, 0, 0.15), 0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  transform: rotateY(180deg);
+}
+
+/* line 24, ../../Users/Aspire 3/Music/Портфолио/туры/sass/components/_tour__card.sass */
+.tour__card:hover .tour__card-side-front {
+  transform: rotateY(-180deg);
+}
+
+/* line 27, ../../Users/Aspire 3/Music/Портфолио/туры/sass/components/_tour__card.sass */
+.tour__card:hover .tour__card-side-back {
+  transform: rotateY(0);
+}
+
+/* line 1, ../../Users/Aspire 3/Music/Портфолио/туры/sass/components/_h2-animated.sass */
+.h2-animated {
+  text-transform: uppercase;
+  background: linear-gradient(90deg, rgba(186, 133, 84, 0.7) 0.03%, rgba(161, 79, 3, 0.7) 99.94%);
+  -webkit-background-clip: text;
+  color: transparent;
+  transition: all .3s ease-out;
+  backface-visibility: hidden;
+}
+
+/* line 9, ../../Users/Aspire 3/Music/Портфолио/туры/sass/components/_h2-animated.sass */
+.h2-animated:hover {
+  transform: skewY(2deg) skewX(15deg) scale(1.1);
+  text-shadow: 0rem 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
+}
+
+/* line 1, ../../Users/Aspire 3/Music/Портфолио/туры/sass/components/_bg-video.sass */
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: linear-gradient(91deg, rgba(186, 133, 84, 0.7) 16.34%, rgba(0, 0, 0, 0.7) 98.8%);
+}
+
+/* line 1, ../../Users/Aspire 3/Music/Портфолио/туры/sass/layout/_header.sass */
+.header {
+  background-color: #F7F7F7;
+}
+
+/* line 4, ../../Users/Aspire 3/Music/Портфолио/туры/sass/layout/_header.sass */
+.header__container {
+  padding-top: 5rem;
+  background: linear-gradient(90deg, rgba(186, 133, 84, 0.7) 0.03%, rgba(1, 1, 1, 0.7) 99.94%), url("../images/header.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  clip-path: polygon(0 0, 100% 0, 100% 98%, 0 81%);
+}
+
+/* line 12, ../../Users/Aspire 3/Music/Портфолио/туры/sass/layout/_header.sass */
+.header__inner-bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* line 18, ../../Users/Aspire 3/Music/Портфолио/туры/sass/layout/_header.sass */
+.header__title {
+  margin: 0;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  font-size: 5rem;
+  line-height: 60px;
+  letter-spacing: 1rem;
+  color: #fff;
+  text-transform: uppercase;
+  animation-name: leftToRight;
+  animation-duration: 1.7s;
+  animation-delay: 2s;
+  animation-timing-function: easy;
+  backface-visibility: hidden;
+}
+
+/* line 33, ../../Users/Aspire 3/Music/Портфолио/туры/sass/layout/_header.sass */
+.header__descr {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 5rem;
+  font-weight: 100;
+  font-size: 3.6rem;
+  line-height: 4.8rem;
+  letter-spacing: 0.5rem;
+  color: #fff;
+  animation-name: rightToLeft;
+  animation-duration: 1.7s;
+  animation-delay: 2s;
+  animation-timing-function: easy;
+  backface-visibility: hidden;
+}
+
+/* line 48, ../../Users/Aspire 3/Music/Портфолио/туры/sass/layout/_header.sass */
+.header__btn {
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 2.4rem;
+  letter-spacing: 0.5rem;
+}
+
+/* line 3, ../../Users/Aspire 3/Music/Портфолио/туры/sass/pages/_home.sass */
+.hero {
+  background-color: #f7f7f7;
+}
+
+/* line 6, ../../Users/Aspire 3/Music/Портфолио/туры/sass/pages/_home.sass */
+.hero__container {
+  padding-top: 8rem;
+  padding-bottom: 5rem;
+}
+
+/* line 10, ../../Users/Aspire 3/Music/Портфолио/туры/sass/pages/_home.sass */
+.hero__title {
+  margin-bottom: 8rem;
+  text-align: center;
+  font-size: 3.6rem;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  letter-spacing: 1rem;
+}
+
+/* line 14, ../../Users/Aspire 3/Music/Портфолио/туры/sass/pages/_home.sass */
+.hero__inner {
+  display: flex;
+  flex-direction: row;
+  gap: 6.8rem;
+  margin-bottom: 45px;
+}
+
+/* line 20, ../../Users/Aspire 3/Music/Портфолио/туры/sass/pages/_home.sass */
+.hero__inner .hero__content {
+  max-width: 48%;
+}
+
+/* line 22, ../../Users/Aspire 3/Music/Портфолио/туры/sass/pages/_home.sass */
+.hero__inner .hero__content-top {
+  margin-bottom: 4.5rem;
+}
+
+/* line 25, ../../Users/Aspire 3/Music/Портфолио/туры/sass/pages/_home.sass */
+.hero__inner .hero__subtitle {
+  margin-bottom: 1rem;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 2px;
+  color: #777777;
+}
+
+/* line 29, ../../Users/Aspire 3/Music/Портфолио/туры/sass/pages/_home.sass */
+.hero__inner .hero__descr {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+  letter-spacing: 2px;
+  color: #777777;
+}
+
+/* line 32, ../../Users/Aspire 3/Music/Портфолио/туры/sass/pages/_home.sass */
+.hero__link {
+  display: inline-block;
+  padding: 1rem;
+  border-bottom: 1px solid #ba8554;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 2px;
+  color: #ba8554;
+}
+
+/* line 45, ../../Users/Aspire 3/Music/Портфолио/туры/sass/pages/_home.sass */
+.hero__gallery-photo {
+  width: 40%;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+  border-radius: .5rem;
+  position: relative;
+  z-index: 10;
+  transition: all .3s ease-in-out;
+  outline-offset: 1rem;
+}
+
+/* line 53, ../../Users/Aspire 3/Music/Портфолио/туры/sass/pages/_home.sass */
+.hero__gallery-photo-1 {
+  top: 0;
+  left: 3rem;
+}
+
+/* line 56, ../../Users/Aspire 3/Music/Портфолио/туры/sass/pages/_home.sass */
+.hero__gallery-photo-2 {
+  top: 7rem;
+  right: 4.7rem;
+}
+
+/* line 59, ../../Users/Aspire 3/Music/Портфолио/туры/sass/pages/_home.sass */
+.hero__gallery-photo-3 {
+  top: -4rem;
+  left: 10rem;
+}
+
+/* line 63, ../../Users/Aspire 3/Music/Портфолио/туры/sass/pages/_home.sass */
+.hero__gallery-photo:hover {
+  outline: 1rem solid #ba8554;
+  transform: scale(1.1);
+  z-index: 20;
+}
+
+/* line 68, ../../Users/Aspire 3/Music/Портфолио/туры/sass/pages/_home.sass */
+.hero__gallery:hover .hero__gallery-photo:not(:hover) {
+  transform: scale(0.95);
+}
+
+/* line 1, ../../Users/Aspire 3/Music/Портфолио/туры/sass/pages/_about.sass */
+.about {
+  background-color: #F7F7F7;
+}
+
+/* line 4, ../../Users/Aspire 3/Music/Портфолио/туры/sass/pages/_about.sass */
+.about__container {
+  padding-top: 21.5rem;
+  padding-bottom: 21.5rem;
+  background: linear-gradient(91deg, rgba(186, 133, 84, 0.7) 16.34%, rgba(0, 0, 0, 0.7) 98.8%), url("../images/about-bcg.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  clip-path: polygon(0 1%, 100% 15%, 100% 99%, 0 85%);
+}
+
+/* line 13, ../../Users/Aspire 3/Music/Портфолио/туры/sass/pages/_about.sass */
+.about__list {
+  display: flex;
+  flex-direction: row;
+  gap: 6rem;
+}
+
+/* line 18, ../../Users/Aspire 3/Music/Портфолио/туры/sass/pages/_about.sass */
+.about__list-icon {
+  margin-bottom: 2.4rem;
+  font-size: 6rem;
+  background: linear-gradient(90deg, rgba(186, 133, 84, 0.7) 0.03%, rgba(161, 79, 3, 0.7) 99.94%);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* line 25, ../../Users/Aspire 3/Music/Портфолио/туры/sass/pages/_about.sass */
+.about__list-item {
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: .6rem;
+  background-color: #F7F7F7;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s;
+}
+
+/* line 36, ../../Users/Aspire 3/Music/Портфолио/туры/sass/pages/_about.sass */
+.about__list-item:hover {
+  transform: translateY(-1.5rem);
+}
+
+/* line 39, ../../Users/Aspire 3/Music/Портфолио/туры/sass/pages/_about.sass */
+.about__subtitle {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 2px;
+  color: #777777;
+  margin-bottom: 1rem;
+}
+
+/* line 43, ../../Users/Aspire 3/Music/Портфолио/туры/sass/pages/_about.sass */
+.about__descr {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+  letter-spacing: 2px;
+  color: #777777;
+  text-align: center;
+}
+
+/* line 1, ../../Users/Aspire 3/Music/Портфолио/туры/sass/pages/_tour.sass */
+.tour {
+  background-color: #f7f7f7;
+}
+
+/* line 4, ../../Users/Aspire 3/Music/Портфолио/туры/sass/pages/_tour.sass */
+.tour__container {
+  padding-top: 8rem;
+  margin-bottom: 8.5rem;
+}
+
+/* line 8, ../../Users/Aspire 3/Music/Портфолио/туры/sass/pages/_tour.sass */
+.tour__title {
+  text-align: center;
+  font-size: 3.6rem;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  letter-spacing: 1rem;
+  margin-bottom: 8rem;
+}
+
+/* line 12, ../../Users/Aspire 3/Music/Портфолио/туры/sass/pages/_tour.sass */
+.tour__inner {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 6rem;
+}
+
+/* line 18, ../../Users/Aspire 3/Music/Портфолио/туры/sass/pages/_tour.sass */
+.tour__card-side {
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+/* line 22, ../../Users/Aspire 3/Music/Портфолио/туры/sass/pages/_tour.sass */
+.tour__card-picture {
+  background-blend-mode: hard-light;
+  background: center / cover no-repeat;
+  background-color: #ba8554;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
+  min-height: 22rem;
+}
+
+/* line 29, ../../Users/Aspire 3/Music/Портфолио/туры/sass/pages/_tour.sass */
+.picture-1 {
+  background-image: url("../images/tour-picture-1.jpg");
+}
+
+/* line 32, ../../Users/Aspire 3/Music/Портфолио/туры/sass/pages/_tour.sass */
+.picture-2 {
+  background-image: url("../images/tour-picture-2.jpg");
+}
+
+/* line 35, ../../Users/Aspire 3/Music/Портфолио/туры/sass/pages/_tour.sass */
+.picture-3 {
+  background-image: url("../images/tour-picture-3.jpg");
+}
+
+/* line 38, ../../Users/Aspire 3/Music/Портфолио/туры/sass/pages/_tour.sass */
+.tour__card-subtitle {
+  text-align: right;
+  text-transform: uppercase;
+  font-size: 28px;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: 2px;
+  color: white;
+  position: absolute;
+  top: 17rem;
+  right: 0;
+}
+
+/* line 49, ../../Users/Aspire 3/Music/Портфолио/туры/sass/pages/_tour.sass */
+.tour__card-subtitle .tour__card-span {
+  background: linear-gradient(90deg, #ba8554, #a14f03);
+  padding: 1rem 2rem .3rem 2rem;
+}
+
+/* line 53, ../../Users/Aspire 3/Music/Портфолио/туры/sass/pages/_tour.sass */
+.tour__card-subtitle .tour__card-2 {
+  position: absolute;
+  top: 3.4rem;
+  right: 0;
+  padding-bottom: 1rem;
+}
+
+/* line 59, ../../Users/Aspire 3/Music/Портфолио/туры/sass/pages/_tour.sass */
+.tour__card-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5rem 4.5rem 5.5rem 4.5rem;
+  gap: 2rem;
+  list-style: none;
+}
+
+/* line 70, ../../Users/Aspire 3/Music/Портфолио/туры/sass/pages/_tour.sass */
+.tour__card-list .tour__card-descr {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 2px;
+  text-decoration-line: underline;
+  color: #777777;
+}
+
+/* line 79, ../../Users/Aspire 3/Music/Портфолио/туры/sass/pages/_tour.sass */
+.tour__card-side-back .tour__card-content {
+  padding: 10rem 3.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* line 85, ../../Users/Aspire 3/Music/Портфолио/туры/sass/pages/_tour.sass */
+.tour__card-side-back .tour__card-content .tour__card-descr {
+  margin-bottom: 87px;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: 2px;
+  color: #fff;
+}
+
+/* line 93, ../../Users/Aspire 3/Music/Портфолио/туры/sass/pages/_tour.sass */
+.tour__card-side-back .tour__card-content .tour__card-price {
+  margin-bottom: 87px;
+  font-size: 60px;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 2px;
+  color: #fff;
+}
+
+/* line 100, ../../Users/Aspire 3/Music/Портфолио/туры/sass/pages/_tour.sass */
+.tour__card-side-back .tour__card-content .tour__card-btn {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 5px;
+}
+
+/* line 107, ../../Users/Aspire 3/Music/Портфолио/туры/sass/pages/_tour.sass */
+.tour__card-side-back .tour__card-content .tour__card-btn:hover {
+  background-color: #fff;
+}
+
+/* line 1, ../../Users/Aspire 3/Music/Портфолио/туры/sass/pages/_feedback.sass */
+.feedback__container {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  position: relative;
+}
+
+/* line 10, ../../Users/Aspire 3/Music/Портфолио/туры/sass/pages/_feedback.sass */
+.feedback__container .feedback__gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(91deg, rgba(186, 133, 84, 0.7) 16.34%, rgba(0, 0, 0, 0.7) 98.8%);
+  z-index: 1;
+}
+
+/* line 19, ../../Users/Aspire 3/Music/Портфолио/туры/sass/pages/_feedback.sass */
+.feedback__title {
+  text-align: center;
+  font-size: 3.6rem;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  letter-spacing: 1rem;
+  margin-bottom: 85px;
+  color: #fff;
+  position: relative;
+  z-index: 2;
+}
+
+/* line 26, ../../Users/Aspire 3/Music/Портфолио/туры/sass/pages/_feedback.sass */
+.feedback__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* line 34, ../../Users/Aspire 3/Music/Портфолио/туры/sass/pages/_feedback.sass */
+.feedback__wrap {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 78.96%;
+  background: rgba(255, 255, 255, 0.8);
+  clip-path: polygon(12% 0, 100% 0, 88% 100%, 0 100%);
+}
+
+/* line 45, ../../Users/Aspire 3/Music/Портфолио/туры/sass/pages/_feedback.sass */
+.feedback__wrap-picture {
+  max-width: 15rem;
+  min-height: 15rem;
+  border-radius: 100px;
+  shape-outside: circle(50% at 50% 50%);
+  -webkit-shape-outside: circle(50% at 50% 50%);
+  overflow: hidden;
+  position: relative;
+}
+
+/* line 54, ../../Users/Aspire 3/Music/Портфолио/туры/sass/pages/_feedback.sass */
+.feedback__wrap-img {
+  transform: scale(1.2);
+  transition: all .5s;
+}
+
+/* line 58, ../../Users/Aspire 3/Music/Портфолио/туры/sass/pages/_feedback.sass */
+.feedback__wrap-img:hover {
+  transform: scale(1);
+}
+
+/* line 61, ../../Users/Aspire 3/Music/Портфолио/туры/sass/pages/_feedback.sass */
+.feedback__wrap-name {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 2px;
+  text-align: center;
+  color: #fff;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, 20%);
+  opacity: 0;
+  transition: all .5s;
+}
+
+/* line 77, ../../Users/Aspire 3/Music/Портфолио/туры/sass/pages/_feedback.sass */
+.feedback__wrap-name:hover {
+  transform: translate(-50%, 10%);
+  opacity: 1;
+}
+
+/* line 84, ../../Users/Aspire 3/Music/Портфолио/туры/sass/pages/_feedback.sass */
+.feedback__wrap-content {
+  width: 52%;
+}
+
+/* line 86, ../../Users/Aspire 3/Music/Портфолио/туры/sass/pages/_feedback.sass */
+.feedback__wrap-subtitle {
+  margin-bottom: 1rem;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 2px;
+  color: #777777;
+}
+
+/* line 93, ../../Users/Aspire 3/Music/Портфолио/туры/sass/pages/_feedback.sass */
+.feedback__wrap-descr {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 2px;
+  color: #777777;
+}
+
+/* line 1, ../../Users/Aspire 3/Music/Портфолио/туры/sass/pages/_reservation.sass */
+.reservation__container {
+  padding: 10rem;
+  background: linear-gradient(90deg, #ba8554, #a14f03);
+}
+
+/* line 5, ../../Users/Aspire 3/Music/Портфолио/туры/sass/pages/_reservation.sass */
+.reservation__inner {
+  height: 50rem;
+  background: linear-gradient(115deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.7) 57%, rgba(186, 133, 84, 0.7) 57%, rgba(161, 79, 3, 0.7) 100%), url("../images/form.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: inherit;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+  border-radius: .5rem;
+  overflow: hidden;
+}
+
+/* line 15, ../../Users/Aspire 3/Music/Портфолио/туры/sass/pages/_reservation.sass */
+.form {
+  padding-top: 5rem;
+  padding-left: 5rem;
+  padding-bottom: 4rem;
+}
+
+/* line 20, ../../Users/Aspire 3/Music/Портфолио/туры/sass/pages/_reservation.sass */
+.reservation__title {
+  margin-bottom: 3rem;
+  font-size: 36px;
+  font-weight: 800;
+  line-height: normal;
+  letter-spacing: 10px;
+}
+
+/* line 27, ../../Users/Aspire 3/Music/Портфолио/туры/sass/pages/_reservation.sass */
+.form__group {
+  margin-bottom: 3rem;
+}
+
+/* line 30, ../../Users/Aspire 3/Music/Портфолио/туры/sass/pages/_reservation.sass */
+.form__input {
+  width: 30%;
+  padding: 18px 22px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 2px;
+  border: none;
+  border-radius: .5rem;
+  color: #000;
+  background-color: #fff;
+  transition: all .4s;
+}
+
+/* line 43, ../../Users/Aspire 3/Music/Портфолио/туры/sass/pages/_reservation.sass */
+.form__input:focus {
+  outline: none;
+  border-bottom: .3rem solid #66D763;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* line 48, ../../Users/Aspire 3/Music/Портфолио/туры/sass/pages/_reservation.sass */
+.form__input:focus:invalid {
+  border-bottom: .3rem solid #D76363;
+}
+
+/* line 51, ../../Users/Aspire 3/Music/Портфолио/туры/sass/pages/_reservation.sass */
+.form__label {
+  display: block;
+  margin-top: 1rem;
+  margin-left: 1.5rem;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 2px;
+  color: #777777;
+  transition: .4s all;
+}
+
+/* line 62, ../../Users/Aspire 3/Music/Портфолио/туры/sass/pages/_reservation.sass */
+.form__input:placeholder-shown + .form__label {
+  opacity: 0;
+  visibility: none;
+}
+
+/* line 66, ../../Users/Aspire 3/Music/Портфолио/туры/sass/pages/_reservation.sass */
+.form__radiobtn {
+  margin-bottom: 3rem;
+}
+
+/* line 69, ../../Users/Aspire 3/Music/Портфолио/туры/sass/pages/_reservation.sass */
+.form__radio {
+  width: 23%;
+  display: inline-flex;
+  align-items: end;
+}
+
+/* line 74, ../../Users/Aspire 3/Music/Портфолио/туры/sass/pages/_reservation.sass */
+.form__input-radio {
+  display: none;
+}
+
+/* line 77, ../../Users/Aspire 3/Music/Портфолио/туры/sass/pages/_reservation.sass */
+.form__label-radio {
+  cursor: pointer;
+  position: relative;
+  padding-left: 4rem;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 2px;
+  color: #777777;
+}
+
+/* line 87, ../../Users/Aspire 3/Music/Портфолио/туры/sass/pages/_reservation.sass */
+.form__btn-radio {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  border: 0.5rem solid #a14f03;
+  display: block;
+  position: absolute;
+  top: -.4rem;
+  left: 0;
+}
+
+/* line 97, ../../Users/Aspire 3/Music/Портфолио/туры/sass/pages/_reservation.sass */
+.form__btn-radio::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background-color: #a14f03;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: all .3s;
+}
+
+/* line 111, ../../Users/Aspire 3/Music/Портфолио/туры/sass/pages/_reservation.sass */
+.form__input-radio:checked ~ .form__label-radio .form__btn-radio::after {
+  opacity: 1;
+}
+
+/* line 114, ../../Users/Aspire 3/Music/Портфолио/туры/sass/pages/_reservation.sass */
+.form__button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #a14f03;
+  text-transform: uppercase;
+  transition: all .5s;
+}
+
+/* line 122, ../../Users/Aspire 3/Music/Портфолио/туры/sass/pages/_reservation.sass */
+.form__button::after {
+  color: #a14f03;
+}
+
+/* line 1, ../../Users/Aspire 3/Music/Портфолио/туры/sass/pages/_footer.sass */
+.footer__container {
+  min-height: 219px;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5rem;
+  background: #333;
+}
+
+/* line 11, ../../Users/Aspire 3/Music/Портфолио/туры/sass/pages/_footer.sass */
+.footer__logo {
+  width: 12rem;
+}
+
+/* line 14, ../../Users/Aspire 3/Music/Портфолио/туры/sass/pages/_footer.sass */
+.footer__list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5rem;
+}
+
+/* line 20, ../../Users/Aspire 3/Music/Портфолио/туры/sass/pages/_footer.sass */
+.footer__list-item {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: 2px;
+  color: #fff;
+}
+
+/*# sourceMappingURL=style.css.map */

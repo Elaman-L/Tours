@@ -1,0 +1,108 @@
+.tour
+    background-color: #f7f7f7
+
+.tour__container
+    padding-top: 8rem
+    margin-bottom: 8.5rem
+
+.tour__title
+    @include section-title
+    margin-bottom: 8rem
+
+.tour__inner
+    display: flex
+    flex-direction: row
+    justify-content: center
+    gap: 6rem
+
+.tour__card-side
+    border-radius: 3px
+    overflow: hidden
+
+.tour__card-picture
+    background-blend-mode: hard-light //Режим наложения эффекта
+    background: center / cover no-repeat
+    background-color: $color-brown-light
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%)
+    min-height: 22rem
+
+.picture-1
+    background-image: url("../images/tour-picture-1.jpg")
+
+.picture-2
+    background-image: url("../images/tour-picture-2.jpg")
+
+.picture-3
+    background-image: url("../images/tour-picture-3.jpg")
+
+.tour__card-subtitle
+    text-align: right
+    text-transform: uppercase
+    font-size: 28px
+    font-weight: 300
+    line-height: normal
+    letter-spacing: 2px
+    color: white
+    position: absolute
+    top: 17rem
+    right: 0
+    .tour__card-span
+        background: linear-gradient(90deg, $color-brown-light , $color-brown-dark)
+        padding: 1rem 2rem .3rem 2rem
+
+    .tour__card-2
+        position: absolute
+        top: 3.4rem
+        right: 0
+        padding-bottom: 1rem
+
+.tour__card-list
+    display: flex
+    flex-direction: column
+    align-items: center
+    padding: 5rem 4.5rem 5.5rem 4.5rem
+    gap: 2rem
+    list-style: none
+
+    .tour__card-item
+        // border-bottom: 1px solid $color-gray
+
+    .tour__card-descr
+        font-size: 16px
+        font-weight: 700
+        line-height: normal
+        letter-spacing: 2px
+        text-decoration-line: underline
+        color: $color-gray
+
+.tour__card-side-back
+    .tour__card-content
+        padding: 10rem 3.2rem
+        display: flex
+        flex-direction: column
+        align-items: center
+
+        .tour__card-descr
+            margin-bottom: 87px
+            font-size: 16px
+            font-weight: 300
+            line-height: normal
+            letter-spacing: 2px
+            color: $color-white
+
+        .tour__card-price
+            margin-bottom: 87px
+            font-size: 60px
+            font-weight: 500
+            line-height: normal
+            letter-spacing: 2px
+            color: $color-white
+        .tour__card-btn
+            @include btn-reset
+            font-size: 20px
+            font-weight: 600
+            line-height: normal
+            letter-spacing: 5px
+
+            &:hover
+                background-color: $color-white
